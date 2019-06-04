@@ -1,0 +1,14 @@
+现有学生表stutable如下:
+
+unicode   stuid   name courseid coursename mark
+1        2005001 张三 0001     数学    69
+2        2005002 李四 0001      数学    89
+3        2005001 张三 0001      数学    69
+
+请编写SQL指令，删除除了unicode不同, 其他都相同的学生冗余信息
+
+解答
+SQL > DELETE stutable WHERE unicode NOT IN(SELECT min(unicode) FROM stutable GROUP BY stuid, name, courseid, coursename, mark)
+
+
+https://blog.csdn.net/u012467492/article/details/46790205
