@@ -1,0 +1,22 @@
+原表:
+courseid coursename score
+-------------------------------------
+1 java 70
+2 oracle 90
+3 xml 40
+4 jsp 30
+5 servlet 80
+-------------------------------------
+为了便于阅读, 查询此表后的结果显式如下( 及格分数为60):
+courseid coursename score mark
+---------------------------------------------------
+1 java 70 pass
+2 oracle 90 pass
+3 xml 40 fail
+4 jsp 30 fail
+5 servlet 80 pass
+---------------------------------------------------
+写出此查询语句
+
+
+SQL > SELECT courseid, coursename, score, decode(sign(score-60),-1,'fail','pass') AS mark FROM course
