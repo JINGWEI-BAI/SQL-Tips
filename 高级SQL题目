@@ -19,4 +19,6 @@ courseid coursename score mark
 写出此查询语句
 
 
-SQL > SELECT courseid, coursename, score, decode(sign(score-60),-1,'fail','pass') AS mark FROM course
+SQL > SELECT courseid, coursename, score, decode(sign(score-60),-1,'fail','pass') 
+      AS mark 
+      FROM course
